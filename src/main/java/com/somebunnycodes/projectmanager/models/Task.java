@@ -27,6 +27,11 @@ public class Task {
     @Size(min=3, max=3000, message="Task description must be between 3 and 3000 characters")
 	private String description;
 	
+	@Column(updatable=false)
+	private Date createdAt;
+	
+	private Date updatedAt;
+	
 	public String getDescription() {
 		return description;
 	}
@@ -46,11 +51,6 @@ public class Task {
 		this.createdBy = createdBy;
 	}
 
-	@Column(updatable=false)
-	private Date createdAt;
-	
-	private Date updatedAt;
-	
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Project project;
 	

@@ -22,8 +22,6 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -55,9 +53,7 @@ public class Project {
 	private Set<User> teamMembers;
 
 	@Column(updatable = false)
-	@CreationTimestamp
 	private Date createdAt;
-	@UpdateTimestamp
 	private Date updatedAt;
 
 	public Long getId() {
